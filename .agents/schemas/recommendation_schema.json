@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RecommendationSchema",
+  "type": "object",
+  "properties": {
+    "agent_name": { "type": "string" },
+    "instrument_id": { "type": ["integer", "null"] },
+    "gross_action": { 
+      "type": "string", 
+      "enum": ["OPEN", "INCREASE", "REDUCE", "CLOSE", "HOLD", "WAIT", "REVIEW_REQUIRED"] 
+    },
+    "gross_delta_quantity": { "type": "number" },
+    "gross_target_weight_pct": { "type": ["number", "null"] },
+    "target_price_base_currency": { "type": ["number", "null"] },
+    "confidence_score": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+    "explanation": { "$ref": "explanation_schema.json" }
+  },
+  "required": [
+    "agent_name",
+    "gross_action",
+    "gross_delta_quantity",
+    "confidence_score",
+    "explanation"
+  ]
+}

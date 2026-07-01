@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RiskConstraintSchema",
+  "type": "object",
+  "properties": {
+    "constraint_type": { "type": "string" },
+    "constraint_scope": { "type": "string" },
+    "threshold_value": { "type": ["number", "null"] },
+    "current_value": { "type": ["number", "null"] },
+    "projected_value": { "type": ["number", "null"] },
+    "severity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+    "hard_or_soft": { "type": "string", "enum": ["HARD", "SOFT"] },
+    "constraint_status": { "type": "string", "enum": ["PASSED", "WARNING", "FAILED"] },
+    "explanation": { "type": ["string", "null"] }
+  },
+  "required": [
+    "constraint_type",
+    "constraint_scope",
+    "severity",
+    "hard_or_soft",
+    "constraint_status"
+  ]
+}

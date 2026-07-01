@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExplanationSchema",
+  "type": "object",
+  "properties": {
+    "primary_driver": { "type": "string" },
+    "secondary_drivers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "quantitative_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric": { "type": "string" },
+          "value": { "type": "string" },
+          "interpretation": { "type": "string" }
+        },
+        "required": ["metric", "value", "interpretation"]
+      }
+    },
+    "macro_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risk_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "data_quality_flags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "counterarguments": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "confidence_rationale": { "type": "string" },
+    "veto_or_override_rationale": { "type": ["string", "null"] }
+  },
+  "required": [
+    "primary_driver",
+    "secondary_drivers",
+    "quantitative_evidence",
+    "macro_evidence",
+    "risk_evidence",
+    "data_quality_flags",
+    "counterarguments",
+    "confidence_rationale"
+  ]
+}

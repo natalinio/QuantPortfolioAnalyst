@@ -1,0 +1,29 @@
+# QuantPortfolioAnalyst (QPA) - .gitignore
+# Obscure all private implementation code, tests, specifications and local data
+# Only publish the semantic agentic definitions (.agents) and the public README
+
+# Source Code & Tests
+/src/
+/tests/
+/spec/
+
+# Local Data & Outputs
+/data/
+
+# Private Documents
+/TECHNICAL_DOCUMENTATION.md
+/linkedin_post.txt
+
+# Configuration Files & Secrets
+/.env
+/.env.*
+/pyproject.toml
+
+# Virtual Environments & Caches
+.venv/
+venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

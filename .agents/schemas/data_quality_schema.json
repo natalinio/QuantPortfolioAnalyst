@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DataQualitySchema",
+  "type": "object",
+  "properties": {
+    "entity_type": { "type": "string" },
+    "entity_key": { "type": "string" },
+    "check_name": { "type": "string" },
+    "check_status": { "type": "string", "enum": ["PASSED", "WARNING", "FAILED"] },
+    "severity": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+    "details": { "type": ["string", "null"] }
+  },
+  "required": [
+    "entity_type",
+    "entity_key",
+    "check_name",
+    "check_status",
+    "severity"
+  ]
+}
